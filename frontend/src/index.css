@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #020617; /* slate-950 */
+}
+
+/* Fix React Flow Controls visibility in Dark Mode */
+.react-flow__controls-button {
+  background-color: #1e293b !important; /* slate-800 */
+  border-bottom: 1px solid #334155 !important; /* slate-700 */
+  fill: #f1f5f9 !important; /* slate-100 */
+}
+
+.react-flow__controls-button:hover {
+  background-color: #334155 !important;
+}
+
+.react-flow__controls-button svg {
+  fill: currentColor !important;
+}
