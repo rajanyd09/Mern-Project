@@ -94,8 +94,9 @@ const FlowComponent = () => {
       return node;
     }));
 
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
     try {
-      const res = await axios.post('http://localhost:5001/api/ask-ai', { prompt: promptValue });
+      const res = await axios.post(`${API_BASE_URL}/api/ask-ai`, { prompt: promptValue });
       const responseValue = res.data.response;
       
       setNodes((nds) => nds.map((node) => {
@@ -126,8 +127,9 @@ const FlowComponent = () => {
     // Avoid saving empty values or default placeholder text
     if (!promptValue.trim() || !responseValue.trim() || isLoading || responseValue === 'Generated response will appear here...') return;
     
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
     try {
-      await axios.post('http://localhost:5001/api/save', { prompt: promptValue, response: responseValue });
+      await axios.post(`${API_BASE_URL}/api/save`, { prompt: promptValue, response: responseValue });
       setSaveStatus('Saved to Database!');
       setTimeout(() => setSaveStatus(''), 3000);
     } catch (err) {
