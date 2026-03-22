@@ -4,7 +4,7 @@ An AI-powered interactive flow canvas built with **React**, **React Flow**, **No
 
 ## 🚀 Quick Start
 
-1.  **Backend**: `cd backend && nodemon server.js` (uses nodemon)
+1.  **Backend**: `cd backend && nodemon server.js` 
 2.  **Frontend**: `cd frontend && npm run dev` (uses vite)
 
 ## 📚 Documentation
