@@ -10,10 +10,7 @@ const getGenAI = () => {
   return genAI;
 };
 
-/**
- * @desc    Generate AI response using Gemini
- * @route   POST /api/ask-ai
- */
+
 export const askAI = async (req, res) => {
   try {
     const { prompt } = req.body;
@@ -46,10 +43,7 @@ export const askAI = async (req, res) => {
   }
 };
 
-/**
- * @desc    Save interaction to MongoDB
- * @route   POST /api/save
- */
+
 export const saveInteraction = async (req, res) => {
   try {
     const { prompt, response } = req.body;

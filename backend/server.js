@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import aiRoutes from './routes/aiRoutes.js';
 
-// Load environment variables
 dotenv.config();
 
 // Connect to Database
@@ -22,7 +21,7 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
+    
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
@@ -36,7 +35,7 @@ app.use(express.json());
 // Routes
 app.use('/api', aiRoutes);
 
-// Health check route
+
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
